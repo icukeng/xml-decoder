@@ -31,12 +31,13 @@ function onStart(tag, value) {
 	// at first work_emement is parent element,
 	// then  we reassign for next level of iteration
 	work_path.push(tag);
+	var work_path_str = work_path.join('/')
 	// options.debug('start\t', tag, '\t', work_path.join('/'))
 	// options.debug('current', work_element, 'stack', work_stack)
 
 	// create new element
 	var new_element = {
-		'@tag': tag
+		'@tag': tag // @tag  remains origin (for renameTag)
 	}
 	if(options.mergeAttrs){
 		for(var key in value) {
@@ -46,7 +47,11 @@ function onStart(tag, value) {
 		new_element['@attrs'] = value
 	}
 
-	let toArrayMaster = options.toArray[work_path.join('/')]
+	if( options.renameTag[work_path_str] ){
+		tag = options.renameTag[work_path_str]
+	}
+
+	let toArrayMaster = options.toArray[work_path_str]
 	let toArraySlave  = options.toArray[work_path.slice(0, -1).join('/')]
 	if( toArrayMaster ) {
 		// options.debug('--toArrayMaster set many')
@@ -65,7 +70,7 @@ function onStart(tag, value) {
 	// add new tag to the document
 	if ( !(tag in work_element) ) { // first element of that tag in parent
 		// options.debug('--first')
-		work_element[tag] = options.asArray[work_path.join('/')]
+		work_element[tag] = options.asArray[work_path_str]
 		? [ new_element ]
 		: new_element
 	} else if ( !(work_element[tag] instanceof Array) ) { // not first, and handling is not array ( actially second)
@@ -84,6 +89,7 @@ function onStart(tag, value) {
 	// work_tag     = tag logicaly need to be here but actually not used
 }
 function onEnd(tag) {
+	var work_path_str = work_path.join('/')
 	work_path.pop();
 	// options.debug('end\t', tag, '\t', work_path.join('/'))
 
@@ -98,13 +104,19 @@ function onEnd(tag) {
 
 	// place simple tag-value as key-value in parent object
 	if( cur['@value'] && cur['@tag'] && cur['@tag'] == tag && Object.keys(cur).length == 2) {
+
+		if( options.renameTag[work_path_str] ){
+			tag = options.renameTag[work_path_str]
+		}
+
 		if( work_element[tag] instanceof Array ) {
 			work_element[tag].pop() // remove simple object
 			work_element[tag].push(cur['@value'])
 		} else {
-		work_element[tag] = cur['@value']
+			work_element[tag] = cur['@value']
 		}
-	}
+
+	} // simple tag check
 }
 function onText(value) {
 	work_element['@value'] = (work_element['@value'] || '') + value
@@ -128,6 +140,7 @@ module.exports = function(xml, _options) {
 	options.mergeAttrs = _options.mergeAttrs
 	options.asArray    = arr2obj(_options.asArray)
 	options.toArray    = arr2obj(_options.toArray)
+	options.renameTag  = _options.renameTag || {}
 
 	var parser = new ltx()
 	parser.on('startElement', onStart)

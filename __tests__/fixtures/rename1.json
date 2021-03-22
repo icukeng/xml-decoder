@@ -1,0 +1,37 @@
+{
+  "root": {
+    "@tag": "root",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:noNamespaceSchemaLocation": "",
+    "person": [
+      {
+        "@tag": "person1",
+        "id": "p1"
+      },
+      {
+        "@tag": "person2",
+        "id": "p2"
+      },
+      {
+        "@tag": "person1",
+        "id": "p3"
+      },
+      {
+        "@tag": "person2",
+        "id": "p4"
+      },
+      {
+        "@tag": "person1",
+        "id": "p5"
+      },
+      {
+        "@tag": "person2",
+        "id": "p6"
+      }
+    ],
+    "multi": [
+      "aaa",
+      "bbb"
+    ]
+  }
+}

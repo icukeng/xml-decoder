@@ -1,0 +1,51 @@
+{
+  "structure": {
+    "@tag": "structure",
+    "university": {
+      "@tag": "university",
+      "id": "u",
+      "children": [
+        {
+          "@tag": "university",
+          "id": "u1",
+          "children": [
+            {
+              "@tag": "faculty",
+              "id": "f11",
+              "children": [
+                {
+                  "@tag": "department",
+                  "id": "d111",
+                  "group": [
+                    {
+                      "@tag": "group",
+                      "id": "g1111"
+                    },
+                    {
+                      "@tag": "group",
+                      "id": "g1112"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@tag": "filial",
+          "id": "u2",
+          "children": [
+            {
+              "@tag": "faculty",
+              "id": "f21"
+            },
+            {
+              "@tag": "faculty",
+              "id": "f22"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

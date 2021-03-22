@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+	<person1 id="p1">
+	</person1>
+	<person2 id="p2">
+	</person2>
+	<single>aaa</single>
+	<person1 id="p3">
+	</person1>
+	<person2 id="p4">
+	</person2>
+	<person1 id="p5">
+	</person1>
+	<person2 id="p6">
+	</person2>
+	<single>bbb</single>
+</root>

@@ -1,0 +1,19 @@
+<structure>
+	<university id="u">
+		<university id="u1">
+			<faculty id="f11">
+				<department id="d111">
+					<group id="g1111"/>
+					<group id="g1112"/>
+				</department>
+			</faculty>
+		</university>
+		<filial id="u2">
+			<faculty id="f21">
+			</faculty>
+			<faculty id="f22">
+			</faculty>
+		</filial>
+	</university>
+</structure>
+    
