@@ -1,0 +1,91 @@
+{
+    "root": {
+      "@tag": "root",
+      "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "xsi:noNamespaceSchemaLocation": "",
+      "persons": [
+        {
+          "@tag": "person1",
+          "id": "p1",
+          "p": "1",
+          "stages": [
+            {
+              "@tag": "stage",
+              "id": "s1",
+              "@value": "s11"
+            }
+          ]
+        },
+        {
+          "@tag": "person2",
+          "id": "p2",
+          "stages": [
+            {
+              "@tag": "stage",
+              "id": "s2",
+              "@value": "s22"
+            }
+          ],
+          "p": "1"
+        },
+        {
+          "@tag": "singe",
+          "@value": "aaa"
+        },
+        {
+          "@tag": "person1",
+          "id": "p3",
+          "p": "1",
+          "stages": [
+            {
+              "@tag": "stage",
+              "id": "s3",
+              "@value": "s33"
+            }
+          ]
+        },
+        {
+          "@tag": "person2",
+          "id": "p4",
+          "stages": [
+            {
+              "@tag": "stage",
+              "id": "s4",
+              "@value": "s44"
+            }
+          ],
+          "p": "1"
+        },
+        {
+          "@tag": "person1",
+          "id": "p5",
+          "p": "1",
+          "stages": [
+            {
+              "@tag": "stage",
+              "id": "s5",
+              "@value": "s55"
+            }
+          ]
+        },
+        {
+          "@tag": "person2",
+          "id": "p6",
+          "stages": [
+            {
+              "@tag": "stage",
+              "id": "s6",
+              "@value": "s66"
+            }
+          ],
+          "p": "1"
+        },
+        {
+          "@tag": "singe",
+          "@value": "bbb"
+        }
+      ],
+      "boo": "bar"
+    }
+  }
+  

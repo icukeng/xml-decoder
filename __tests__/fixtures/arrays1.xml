@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+	<persons person_count="36" stage_count="36">
+		<person1 id="p1">
+			<p>1</p>
+			<stages> <stage id="s1">s11</stage> </stages>
+		</person1>
+		<person2 id="p2">
+			<stages> <stage id="s2">s22</stage> </stages>
+			<p>1</p>
+		</person2>
+		<singe>aaa</singe>
+		<person1 id="p3">
+			<p>1</p>
+			<stages> <stage id="s3">s33</stage> </stages>
+		</person1>
+		<person2 id="p4">
+			<stages> <stage id="s4">s44</stage> </stages>
+			<p>1</p>
+		</person2>
+	</persons>
+	<boo>bar</boo>
+	<persons person_count="36" stage_count="36">
+		<person1 id="p5">
+			<p>1</p>
+			<stages> <stage id="s5">s55</stage> </stages>
+		</person1>
+		<person2 id="p6">
+			<stages> <stage id="s6">s66</stage> </stages>
+			<p>1</p>
+		</person2>
+		<singe>bbb</singe>
+	</persons>
+</root>

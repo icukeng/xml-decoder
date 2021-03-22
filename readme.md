@@ -41,3 +41,4 @@ console.log(JSON.stringify(obj));
 
 * **mergeAttrs**, bool (default: felse) - flag to merge attrs with single valued child tags in common structure or not
 * **asArray**, array of full paths in xml - force array for tag value
+* **toArray**, array of full paths in xml - attributes of target tag ignored, target tag becomes array, child tags become array values
