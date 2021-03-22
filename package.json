@@ -1,0 +1,19 @@
+{
+  "name": "xml-decode",
+  "description": "",
+  "repository": "",
+  "license": "MIT",
+  "main": "index",
+  "bin": {
+    "xmldecode": "xmldecode"
+  },
+  "dependencies": {
+    "ltx": "^2.10.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

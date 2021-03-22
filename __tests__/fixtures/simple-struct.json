@@ -1,0 +1,37 @@
+{
+  "root": {
+    "@tag": "root",
+    "empty1": {
+      "@tag": "empty1"
+    },
+    "empty2": {
+      "@tag": "empty2"
+    },
+    "nonempty": "ne1",
+    "parent1": {
+      "@tag": "parent1",
+      "@value": "1\n\t\t\n\t\t2",
+      "foo": {
+        "@tag": "foo"
+      }
+    },
+    "parent2": {
+      "@tag": "parent2",
+      "attr1": "a",
+      "attr2": "b",
+      "child1": "child1val",
+      "child2": {
+        "@tag": "child2",
+        "a": "a",
+        "@value": "child2val"
+      },
+      "ch31": {
+        "@tag": "ch31",
+        "ch311": {
+          "@tag": "ch311",
+          "ch3111": "aaa"
+        }
+      }
+    }
+  }
+}

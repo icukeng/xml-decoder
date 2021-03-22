@@ -1,0 +1,19 @@
+<root>
+	<empty1/>
+	<empty2></empty2>
+	<nonempty>ne1</nonempty>
+	<parent1>
+		1
+		<foo/>
+		2
+	</parent1>
+	<parent2 attr1="a" attr2="b">
+		<child1>child1val</child1>
+		<child2 a="a">child2val</child2>
+		<ch31>
+			<ch311>
+				<ch3111>aaa</ch3111>
+			</ch311>
+		</ch31>
+	</parent2>
+</root>

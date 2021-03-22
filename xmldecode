@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var xmldecode = require('./index.js')
+
+var args = process.argv.slice(2)
+var arg = args[0]
+
+var src = fs.readFileSync(arg, 'utf8')
+var options = {
+	mergeAttrs: true,
+}
+
+console.log(JSON.stringify(xmldecode(src, options), null, 2))
