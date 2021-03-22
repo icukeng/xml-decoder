@@ -1,12 +1,27 @@
 {
-  "name": "xml-decode",
-  "description": "",
-  "repository": "",
+  "name": "xml-decoder",
+  "author": "icukeng",
+  "version": "0.1.0",
+  "description": "another xml reader with build in transformations",
+  "homepage": "https://github.com/icukeng/xml-decoder",
   "license": "MIT",
   "main": "index",
   "bin": {
-    "xmldecode": "xmldecode"
+    "xmldecoder": "xmldecoder"
   },
+  "keywords": [
+    "xml",
+    "json",
+    "xml2obj",
+    "xmltoobj",
+    "xml2json",
+    "xmltojson",
+    "xml2js",
+    "xmltojs",
+    "parser",
+    "parse",
+    "parsing"
+  ],
   "dependencies": {
     "ltx": "^2.10.0"
   },

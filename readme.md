@@ -22,18 +22,18 @@ It does not parse the following elements:
 ## Installation
 
 ```
-$ npm install xml-decode
+$ npm install xml-decoder
 ```
 
 ## Usage
 
 ```javascript
-var xmldecode = require('xml-decode');
+var xmldecoder = require('xml-decoder');
 
 var xml = "<foo attr=\"value\">bar</foo>";
 console.log(xml)
 
-var obj = xmldecode(xml, {mergeAttrs: true});
+var obj = xmldecoder(xml, {mergeAttrs: true});
 console.log(JSON.stringify(obj));
 ```
 
