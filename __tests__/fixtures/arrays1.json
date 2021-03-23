@@ -7,7 +7,7 @@
         {
           "@tag": "person1",
           "id": "p1",
-          "p": "1",
+          "p": 1,
           "stages": [
             {
               "@tag": "stage",
@@ -26,7 +26,7 @@
               "@value": "s22"
             }
           ],
-          "p": "1"
+          "p": 1
         },
         {
           "@tag": "singe",
@@ -35,7 +35,7 @@
         {
           "@tag": "person1",
           "id": "p3",
-          "p": "1",
+          "p": 1,
           "stages": [
             {
               "@tag": "stage",
@@ -54,12 +54,12 @@
               "@value": "s44"
             }
           ],
-          "p": "1"
+          "p": 1
         },
         {
           "@tag": "person1",
           "id": "p5",
-          "p": "1",
+          "p": 1,
           "stages": [
             {
               "@tag": "stage",
@@ -78,7 +78,7 @@
               "@value": "s66"
             }
           ],
-          "p": "1"
+          "p": 1
         },
         {
           "@tag": "singe",

@@ -1,0 +1,52 @@
+{
+  "root": {
+    "@tag": "root",
+    "a": [
+      {
+        "@tag": "a",
+        "attr": 1,
+        "@value": 2
+      },
+      {
+        "@tag": "a",
+        "attr": 1,
+        "@value": 2
+      },
+      {
+        "@tag": "a",
+        "attr": "aaa",
+        "@value": "bbb"
+      },
+      {
+        "@tag": "a",
+        "attr": 10,
+        "@value": 11
+      },
+      {
+        "@tag": "a",
+        "attr": "a1",
+        "@value": "b2"
+      },
+      {
+        "@tag": "a",
+        "attr": 0,
+        "@value": 0
+      },
+      {
+        "@tag": "a",
+        "attr": 0,
+        "@value": 0
+      },
+      {
+        "@tag": "a",
+        "attr": "00a",
+        "@value": "00b"
+      },
+      {
+        "@tag": "a",
+        "attr": "a00",
+        "@value": "b00"
+      }
+    ]
+  }
+}

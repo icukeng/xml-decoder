@@ -1,0 +1,11 @@
+<root>
+    <a attr="1">2</a>
+    <a attr="01">02</a>
+    <a attr="aaa">bbb</a>
+    <a attr="0xA">0xB</a>
+    <a attr="a1">b2</a>
+    <a attr="0">0</a>
+    <a attr="00">00</a>
+    <a attr="00a">00b</a>
+    <a attr="a00">b00</a>
+</root>

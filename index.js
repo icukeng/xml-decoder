@@ -20,11 +20,41 @@ function staсkPop() {
 function stackPush(tag, elt) {
 	work_stack.push({tag: tag, elt:elt})
 }
+
+function typecaster(key, value) {
+	// for @attr is empty,
+	// for @value deleted (not even gets here)
+	if( value === '' ) return value
+
+	// check for number
+	var num = Number(value);
+	if (!isNaN(num)) {
+		return num;
+	}
+
+	// check for boolean
+	var bool = value.toLowerCase();
+	if (bool ==  'true') return true
+
+	if (bool == 'false') return false
+
+	// other
+	return value
+
+}
 function work_element_empty_value_hide() {
+	// self closed tag
+	if(work_element['@value'] === undefined)
+		return delete work_element['@value']
+
 	if( work_element['@value'] )
 		work_element['@value'] = work_element['@value'].trim()
+
 	if( work_element['@value'] === '' )
-		delete work_element['@value']
+		return delete work_element['@value']
+
+	work_element['@value'] = typecaster(null, work_element['@value'])
+
 }
 
 function onStart(tag, value) {
@@ -41,10 +71,13 @@ function onStart(tag, value) {
 	}
 	if(options.mergeAttrs){
 		for(var key in value) {
-			new_element[key] = value[key]
+			new_element[key] = typecaster(null, value[key])
 		}
 	} else{
-		new_element['@attrs'] = value
+		new_element['@attrs'] = {}
+		for(var key in value) {
+			new_element['@attrs'][key] = typecaster(null, value[key])
+		}
 	}
 
 	if( options.renameTag[work_path_str] ){

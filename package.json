@@ -1,7 +1,7 @@
 {
   "name": "xml-decoder",
   "author": "icukeng",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "another xml reader with build in transformations",
   "homepage": "https://github.com/icukeng/xml-decoder",
   "license": "MIT",
