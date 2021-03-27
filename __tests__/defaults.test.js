@@ -14,8 +14,8 @@ describe("simple", () => {
 			expect(dst).toEqual(rez)
 		});
 	})
-	var name = 'arrays1'
-	test(name, () => {
+	test('arrays1', () => {
+		var name = 'arrays1'
 		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
 		var dst = xmldecode(src, {
 			mergeAttrs: true,
@@ -28,8 +28,8 @@ describe("simple", () => {
 		var rez = JSON.parse(fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'))
 		expect(dst).toEqual(rez)
 	});
-	var name = 'rename1'
-	test(name, () => {
+	test('rename1', () => {
+		var name = 'rename1'
 		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
 		var dst = xmldecode(src, {
 			mergeAttrs: true,
@@ -42,8 +42,8 @@ describe("simple", () => {
 		var rez = JSON.parse(fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'))
 		expect(dst).toEqual(rez)
 	});
-	var name = 'rename2-struct'
-	test(name, () => {
+	test('rename2-struct', () => {
+		var name = 'rename2-struct'
 		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
 		var dst = xmldecode(src, {
 			mergeAttrs: true,
@@ -70,8 +70,8 @@ describe("simple", () => {
 		var rez = JSON.parse(fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'))
 		expect(dst).toEqual(rez)
 	});
-	var name = 'typecast1'
-	test(name, () => {
+	test('typecast1', () => {
+		var name = 'typecast1'
 		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
 		var dst = xmldecode(src, {mergeAttrs: true})
 		var rez = JSON.parse(fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'))
