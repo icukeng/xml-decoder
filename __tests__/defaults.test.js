@@ -1,6 +1,14 @@
 var fs = require('fs')
 var xmldecode = require('../index.js')
 
+function json_receiver(k, v) {
+	if(v == "NaN") return NaN
+	if(v ==  "Infinity") return  Infinity
+	if(v == "+Infinity") return  Infinity
+	if(v == "-Infinity") return -Infinity
+	return v
+}
+
 describe("simple", () => {
 
 	[
@@ -74,7 +82,10 @@ describe("simple", () => {
 		var name = 'typecast1'
 		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
 		var dst = xmldecode(src, {mergeAttrs: true})
-		var rez = JSON.parse(fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'))
+		var rez = JSON.parse(
+			fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'),
+			json_receiver
+		)
 		expect(dst).toEqual(rez)
 	});
 	test('typecast2', () => {
@@ -87,14 +98,13 @@ describe("simple", () => {
 				'root/str1/@attr':'string',
 				'root/num1':'number',
 				'root/num1/@attr':'number',
+				'root/num2':'number',
+				'root/num2/@attr':'number',
 			},
 		})
 		var rez = JSON.parse(
 			fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'), 
-			function (k, v) {
-				if(v == "NaN") return NaN
-				return v
-			}
+			json_receiver
 		)
 		expect(dst).toEqual(rez)
 	});

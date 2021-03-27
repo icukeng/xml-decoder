@@ -28,7 +28,10 @@ function typecaster(key, value) {
 	var ovrride = options.overrideTypecast[key]
 	if(ovrride) {
 		if(ovrride == "string") return value
-		if(ovrride == "number") return Number(value)
+		if(ovrride == "number") {
+			if(value == "NaN") return NaN
+			return Number(value)
+		}
 	}
 
 	// for @attr is empty,
@@ -36,6 +39,7 @@ function typecaster(key, value) {
 	if( value === '' ) return value
 
 	// check for number
+	if(value == "NaN") return NaN
 	var num = Number(value);
 	if (!isNaN(num)) {
 		return num;

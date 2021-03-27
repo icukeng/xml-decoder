@@ -1,4 +1,5 @@
 <root>
     <str1 attr="01">02</str1>
     <num1 attr="aaa">bbb</num1>
+    <num2 attr="NaN">Infinity</num2>
 </root>

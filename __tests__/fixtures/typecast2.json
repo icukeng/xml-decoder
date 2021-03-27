@@ -10,6 +10,11 @@
         "@tag": "num1",
         "attr": "NaN",
         "@value": "NaN"
+      },
+      "num2": {
+        "@tag": "num2",
+        "@value": "Infinity",
+        "attr": "NaN"
       }
     }
   }

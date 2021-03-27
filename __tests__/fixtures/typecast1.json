@@ -46,6 +46,26 @@
         "@tag": "a",
         "attr": "a00",
         "@value": "b00"
+      },
+      {
+        "@tag": "a",
+        "@value": "2,54",
+        "attr": 2.54
+      },
+      {
+        "@tag": "a",
+        "@value": "2,54,1",
+        "attr": "2.54.1"
+      },
+      {
+        "@tag": "a",
+        "@value": "-Infinity",
+        "attr": "Infinity"
+      },
+      {
+        "@tag": "a",
+        "@value": "NaN",
+        "attr": "Infinity"
       }
     ]
   }

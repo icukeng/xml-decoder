@@ -8,4 +8,8 @@
     <a attr="00">00</a>
     <a attr="00a">00b</a>
     <a attr="a00">b00</a>
+    <a attr="2.54">2,54</a>
+    <a attr="2.54.1">2,54,1</a>
+    <a attr="Infinity">-Infinity</a>
+    <a attr="+Infinity">NaN</a>
 </root>
