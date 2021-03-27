@@ -37,6 +37,52 @@ var obj = xmldecoder(xml, {mergeAttrs: true});
 console.log(JSON.stringify(obj));
 ```
 
+Example xml:
+```xml
+<root>
+  <items count="2">
+    <item>1</item>
+    <item>2</item>
+  </items>
+  <value attr="a"/>
+  <value attr="b"/>
+  <node_a>x</node_a>
+  <node_b>y</node_b>
+  <item>3</item>
+</root>
+```
+Configurated options:
+```javascript
+var options = {
+	mergeAttrs: true,
+	toArray: ['root/items'],
+	asArray: ['root/item'],
+	renameTag: {
+		'root/value':'values',
+		'root/node_a':'nodes',
+		'root/node_b':'nodes',
+	}
+}
+```
+Result object:
+```json
+{
+  "root": {
+    "@tag": "root",
+    "items": [
+      { "@tag": "item", "@value": 1 },
+      { "@tag": "item", "@value": 2 }
+    ],
+    "values": [
+      { "@tag": "value", "attr": "a" },
+      { "@tag": "value", "attr": "b" }
+    ],
+    "nodes": [ "x", "y" ],
+    "item": [ 3 ]
+  }
+}
+```
+
 ### Options
 
 * **mergeAttrs**, bool (default: felse) - flag to merge attrs with single valued child tags in common structure or not
