@@ -1,0 +1,16 @@
+{
+    "root": {
+      "@tag": "root",
+      "str1": {
+        "@tag": "str1",
+        "attr": "01",
+        "@value": "02"
+      },
+      "num1": {
+        "@tag": "num1",
+        "attr": "NaN",
+        "@value": "NaN"
+      }
+    }
+  }
+  

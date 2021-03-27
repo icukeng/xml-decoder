@@ -22,6 +22,15 @@ function stackPush(tag, elt) {
 }
 
 function typecaster(key, value) {
+	if(!options.doTypecast) return value
+
+	// has override
+	var ovrride = options.overrideTypecast[key]
+	if(ovrride) {
+		if(ovrride == "string") return value
+		if(ovrride == "number") return Number(value)
+	}
+
 	// for @attr is empty,
 	// for @value deleted (not even gets here)
 	if( value === '' ) return value
@@ -52,9 +61,9 @@ function work_element_empty_value_hide() {
 
 	if( work_element['@value'] === '' )
 		return delete work_element['@value']
-
-	work_element['@value'] = typecaster(null, work_element['@value'])
-
+	// called after work_path.pop,
+	// TODO need to guarantee somehow last tag in work_path
+	work_element['@value'] = typecaster(work_path.join('/') + '/' + work_element['@tag'], work_element['@value'])
 }
 
 function onStart(tag, value) {
@@ -71,12 +80,12 @@ function onStart(tag, value) {
 	}
 	if(options.mergeAttrs){
 		for(var key in value) {
-			new_element[key] = typecaster(null, value[key])
+			new_element[key] = typecaster(work_path_str+'/@'+key, value[key])
 		}
 	} else{
 		new_element['@attrs'] = {}
 		for(var key in value) {
-			new_element['@attrs'][key] = typecaster(null, value[key])
+			new_element['@attrs'][key] = typecaster(work_path_str+'/@'+key, value[key])
 		}
 	}
 
@@ -174,6 +183,16 @@ module.exports = function(xml, _options) {
 	options.asArray    = arr2obj(_options.asArray)
 	options.toArray    = arr2obj(_options.toArray)
 	options.renameTag  = _options.renameTag || {}
+	// can be false, true, hash
+	options.overrideTypecast = {}
+	if( _options.typecast === undefined ) {// default
+		options.doTypecast = true
+	} else if ( _options.typecast instanceof Object ) { // overrides
+		options.doTypecast = true
+		options.overrideTypecast = _options.typecast
+	} else {
+		options.doTypecast = false
+	}
 
 	var parser = new ltx()
 	parser.on('startElement', onStart)

@@ -43,3 +43,13 @@ console.log(JSON.stringify(obj));
 * **asArray**, array of full paths in xml - force array for tag value
 * **toArray**, array of full paths in xml - attributes of target tag ignored, target tag becomes array, child tags become array values
 * **renameTag**, key-value of full path to new tag name - rename tag
+* **typecast**, key-value of full path to type - override auto type casting
+  ```javascript
+  typecast: false, // disable auto typecasting
+  ```
+  ```javascript
+  typecast: [
+      "path/to/tag": "number",
+      'path/to/@attr': "string" // attributes prefixed with @
+  ]
+  ```

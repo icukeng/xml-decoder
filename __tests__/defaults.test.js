@@ -77,5 +77,26 @@ describe("simple", () => {
 		var rez = JSON.parse(fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'))
 		expect(dst).toEqual(rez)
 	});
+	test('typecast2', () => {
+		var name = 'typecast2'
+		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
+		var dst = xmldecode(src, {
+			mergeAttrs: true,
+			typecast: {
+				'root/str1':'string',
+				'root/str1/@attr':'string',
+				'root/num1':'number',
+				'root/num1/@attr':'number',
+			},
+		})
+		var rez = JSON.parse(
+			fs.readFileSync(__dirname+'/fixtures/'+name+'.json', 'utf8'), 
+			function (k, v) {
+				if(v == "NaN") return NaN
+				return v
+			}
+		)
+		expect(dst).toEqual(rez)
+	});
 
 });
