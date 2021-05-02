@@ -41,7 +41,8 @@ describe("simple", () => {
 		var src = fs.readFileSync(__dirname+'/fixtures/'+name+'.xml', 'utf8')
 		var dst = xmldecode(src, {
 			mergeAttrs: true,
-			renameTag: {
+			rename: {
+				'root/person1/@id': 'uid',
 				'root/person1': 'person',
 				'root/person2': 'person',
 				'root/single': 'multi',
@@ -66,7 +67,7 @@ describe("simple", () => {
 				'structure/university/filial/faculty/department/group',
 		
 			],
-			renameTag: {
+			rename: {
 				'structure/university/university': 'children',
 				'structure/university/filial'    : 'children',
 				'structure/university/university/faculty': 'children',

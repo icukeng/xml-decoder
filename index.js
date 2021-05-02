@@ -80,21 +80,25 @@ function onStart(tag, value) {
 
 	// create new element
 	var new_element = {
-		'@tag': tag // @tag  remains origin (for renameTag)
+		'@tag': tag // @tag  remains origin (for rename)
 	}
 	if(options.mergeAttrs){
 		for(var key in value) {
-			new_element[key] = typecaster(work_path_str+'/@'+key, value[key])
+			var attr_path = work_path_str+'/@'+key
+			var new_key = options.rename[attr_path] ? options.rename[attr_path] : key
+			new_element[new_key] = typecaster(attr_path, value[key])
 		}
 	} else{
 		new_element['@attrs'] = {}
 		for(var key in value) {
-			new_element['@attrs'][key] = typecaster(work_path_str+'/@'+key, value[key])
+			var attr_path = work_path_str+'/@'+key
+			var new_key = options.rename[attr_path] ? options.rename[attr_path] : key
+			new_element['@attrs'][new_key] = typecaster(attr_path, value[key])
 		}
 	}
 
-	if( options.renameTag[work_path_str] ){
-		tag = options.renameTag[work_path_str]
+	if( options.rename[work_path_str] ){
+		tag = options.rename[work_path_str]
 	}
 
 	let toArrayMaster = options.toArray[work_path_str]
@@ -151,8 +155,8 @@ function onEnd(tag) {
 	// place simple tag-value as key-value in parent object
 	if( cur['@value'] && cur['@tag'] && cur['@tag'] == tag && Object.keys(cur).length == 2) {
 
-		if( options.renameTag[work_path_str] ){
-			tag = options.renameTag[work_path_str]
+		if( options.rename[work_path_str] ){
+			tag = options.rename[work_path_str]
 		}
 
 		if( work_element[tag] instanceof Array ) {
@@ -186,7 +190,11 @@ module.exports = function(xml, _options) {
 	options.mergeAttrs = _options.mergeAttrs
 	options.asArray    = arr2obj(_options.asArray)
 	options.toArray    = arr2obj(_options.toArray)
-	options.renameTag  = _options.renameTag || {}
+	options.rename  = _options.rename || {}
+	if(_options.renameTag) {
+		console.warn('Warning: xml-decoder "renameTag" id deprecated, use "rename"');
+		options.rename  = _options.renameTag || {}
+	}
 	// can be false, true, hash
 	options.overrideTypecast = {}
 	if( _options.typecast === undefined ) {// default

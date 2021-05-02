@@ -88,7 +88,7 @@ Result object:
 * **mergeAttrs**, bool (default: felse) - flag to merge attrs with single valued child tags in common structure or not
 * **asArray**, array of full paths in xml - force array for tag value
 * **toArray**, array of full paths in xml - attributes of target tag ignored, target tag becomes array, child tags become array values
-* **renameTag**, key-value of full path to new tag name - rename tag
+* **rename**, key-value of full path to new field name - rename (former **renameTag** extended to attrs)
 * **typecast**, key-value of full path to type - override auto type casting
   ```javascript
   typecast: false, // disable auto typecasting

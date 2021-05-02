@@ -6,7 +6,7 @@
     "person": [
       {
         "@tag": "person1",
-        "id": "p1"
+        "uid": "p1"
       },
       {
         "@tag": "person2",
@@ -14,7 +14,7 @@
       },
       {
         "@tag": "person1",
-        "id": "p3"
+        "uid": "p3"
       },
       {
         "@tag": "person2",
@@ -22,7 +22,7 @@
       },
       {
         "@tag": "person1",
-        "id": "p5"
+        "uid": "p5"
       },
       {
         "@tag": "person2",
